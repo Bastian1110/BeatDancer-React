@@ -1,0 +1,17 @@
+.inputBox{
+    width: 100%;
+    padding: 1%;
+    margin: 5px 5% 22px 0;
+    display: inline-block;
+    border: none;
+    background: hsl(0, 0%, 95%);
+}
+
+.inputBox:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+form{
+    width: 20%;
+}
