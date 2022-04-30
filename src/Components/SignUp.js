@@ -1,8 +1,8 @@
-import style from './SignUpStyle.css'
-import React from 'react'
-import axios from 'axios';
-import Modal from 'react-modal'
-import ModalButton from './ModalButton';
+import React from "react";
+import axios from "axios";
+import Popup from "reactjs-popup";
+
+import './SignUp.css'
 
 
 class SignUp extends React.Component{
@@ -14,7 +14,6 @@ class SignUp extends React.Component{
             country:'',
             password:'',
             mail:'',
-            modalOpened: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,11 +22,6 @@ class SignUp extends React.Component{
         this.handleBirthDay = this.handleBirthDay.bind(this);
         this.handleCountry = this.handleCountry.bind(this);
         this.handleMail = this.handleMail.bind(this);
-        this.toggleModal = this.toggleModal.bind(this);
-    }
-
-    toggleModal() {
-        this.setState(prevState => ({ modalOpened: !prevState.modalOpened }));
     }
 
     handleName(event){
@@ -60,68 +54,59 @@ class SignUp extends React.Component{
 
     render(){
         return(
-            <>
-            <ModalButton handleClick={this.toggleModal}>Sign Up</ModalButton>
-            <Modal 
-                className={{ base: [style.formPopUpClosed]}}
-                overlayClassName={{ base: [style.formPopUpOpen] }}
-                isOpen={this.state.modalOpened}
-                onRequestClose={this.toggleModal}
-            >
-            <div className='formContainer'>
-                <h3>Sign Up</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label className='inputLabel'>
-                        Username:
-                        <input type="text" 
+            <Popup trigger={<button className="signUpButton"> Sign Up </button>} modal>
+                <div className="signUpContainer">
+                    <h1>Sign Up</h1>
+                    <form className="signUpForm" onSubmit={this.handleSubmit}>
+                        <label className="signUpLabel">
+                            Username:
+                            <input type="text" 
                                value={this.state.name} 
                                onChange={this.handleName} 
-                               className="inputBox"
+                               className="signInputBox"
                                placeholder='CuteCat22'
-                        />
-                    </label>
-                    <label className='inputLabel'>
-                        Birthday:
-                        <input 
+                            />
+                        </label>
+                        <label className="signUpLabel">
+                            Birthday:
+                            <input 
                                 type="date" 
                                 value={this.state.birthday} 
                                 onChange={this.handleBirthDay} 
-                                className="inputBox"
-                        />
-                    </label>
-                    <label className='inputLabel'>
-                        Country:
-                        <input type="country" 
+                                className="signInputBox"
+                            />
+                        </label>
+                        <label className="signUpLabel">
+                            Country:
+                            <input type="country" 
                                value={this.state.country} 
                                onChange={this.handleCountry} 
-                               className="inputBox"
+                               className="signInputBox"
                                placeholder='Wonderland'
-                        />
-                    </label>
-                    <label className='inputLabel'>
-                        Password:
-                        <input type="password" 
+                            />
+                        </label>
+                        <label className="signUpLabel">
+                            Password:
+                            <input type="password" 
                                value={this.state.password} 
                                onChange={this.handlePswd} 
-                               className="inputBox"
+                               className="signInputBox"
                                placeholder='Difficult123'
-                        />
-                    </label>
-                    <label className='inputLabel'>
-                        Mail:
-                        <input type="mail" 
+                            />
+                        </label>
+                        <label className="signUpLabel">
+                            Mail:
+                            <input type="mail" 
                                value={this.state.mail} 
                                onChange={this.handleMail} 
-                               className="inputBox"
+                               className="signInputBox"
                                placeholder='Katsby@miau.com'
-                        />
-                    </label>
-                    <button className='cancelButton' onClick={this.toggleModal}>Cancel</button>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-            </Modal>
-            </>
+                            />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </Popup>
         );
     }
 

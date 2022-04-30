@@ -1,4 +1,4 @@
-.logInButton{
+.signUpButton{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(93, 232, 225);
     padding-left: 2%;
@@ -6,17 +6,17 @@
     padding-top: 1%;
     padding-bottom: 1%;
     float: right;
-    margin-right: 5%;
+    margin-right: 1%;
     border: 0ch;
     width: 12%;
     font-size: larger;
     font-weight: bolder;
 }
-.logInLabel{
+.signUpLabel{
     display: block;
     margin-bottom: 10%;
 }
-.logInContainer{
+.signUpContainer{
     width: 100%;
     padding: 20%;
     background-color: rgb(192, 139, 243);
