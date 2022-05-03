@@ -54,7 +54,7 @@ class SignUp extends React.Component{
 
     render(){
         return(
-            <Popup trigger={<button className="signUpButton"> Sign Up </button>} modal>
+            <Popup trigger={<button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-8 mx-8 rounded shadow-lg hover:shadow-xl transition duration-200 float-right"> Sign Up </button>} modal>
                 <div className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
                     <section>
                     <h2 className="font-bold text-2xl">Sign Up</h2>

@@ -9,7 +9,8 @@ class LogIn extends React.Component{
         super(props);
         this.state = {
             name : '',
-            password : ''
+            password : '',
+            data : ''
         }
         this.handleName = this.handleName.bind(this);
         this.handlePswd = this.handlePswd.bind(this);
@@ -25,24 +26,18 @@ class LogIn extends React.Component{
     }
 
     handleSubmit(event){
-        let sucessFlag = false;
         axios
         .post("http://157.245.9.203/API/LogIn.php",JSON.stringify(this.state))
-        .then(res => console.log(res.data),sucessFlag = true)
+        .then(res=>this.setState({data: res.data}))
         .catch(err => console.log(err));
-        if(sucessFlag){
-            this.props.fetchUser(this.state.name);
-        }
-        else{
-            this.props.fetchUser('Somethimg Wrong With LogIn');
-        }
-        console.log(sucessFlag);
+        this.props.fetchUser(this.state.name);
+        console.log(this.state.data);
         event.preventDefault();
     }
 
     render(){
         return(
-            <Popup trigger={<button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"> Log In </button>} modal>
+            <Popup trigger={<button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-8 mx-8 rounded shadow-lg hover:shadow-xl transition duration-200 float-right"> Log In </button>} modal>
                 <div className="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
                     <section>
                     <h2 className="font-bold text-2xl">Log In</h2>

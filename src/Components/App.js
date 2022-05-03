@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <img src={BDLogo} id='BDLogo'/>
+      <section>
       <div className='User'>{username}</div>
+      </section>
       <LogIn fetchUser={(name)=>setName(name)}  className="LogIn"/>
       <SignUp className="SignUp"/>
 
