@@ -1,6 +1,6 @@
 {
   "name": "beatdancer-react",
-  "homepage" : "http://143.244.189.154",
+  "homepage": "http://143.244.189.154",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24"
   }
 }
