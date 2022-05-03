@@ -1,4 +1,9 @@
 #BDLogo{
   width: 35%;
-  padding-right: 70%;
+  padding-right: 30%;
+  display: inline;
+}
+.User{
+  display: inline-block;
+  width: 100%;
 }

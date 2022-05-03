@@ -1,5 +1,6 @@
 {
   "name": "beatdancer-react",
+  "homepage" : "http://143.244.189.154",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

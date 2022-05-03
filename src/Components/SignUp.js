@@ -45,8 +45,8 @@ class SignUp extends React.Component{
     }
     handleSubmit(event){
         axios
-        .post("http://localhost/API/SignUp.php",JSON.stringify(this.state))
-        .then(res => console.log(res))
+        .post("http://157.245.9.203/API/SignUp.php",JSON.stringify(this.state))
+        .then(res => console.log(res.data))
         .catch(err => console.log(err));
         event.preventDefault();
     }

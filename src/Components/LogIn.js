@@ -25,10 +25,18 @@ class LogIn extends React.Component{
     }
 
     handleSubmit(event){
+        let sucessFlag = false;
         axios
-        .post("http://localhost/API/LogIn.php",JSON.stringify(this.state))
-        .then(res => console.log(res))
+        .post("http://157.245.9.203/API/LogIn.php",JSON.stringify(this.state))
+        .then(res => console.log(res.data),sucessFlag = true)
         .catch(err => console.log(err));
+        if(sucessFlag){
+            this.props.fetchUser(this.state.name);
+        }
+        else{
+            this.props.fetchUser('Somethimg Wrong With LogIn');
+        }
+        console.log(sucessFlag);
         event.preventDefault();
     }
 
