@@ -10,7 +10,7 @@ class LogIn extends React.Component{
         this.state = {
             name : '',
             password : '',
-            data : ''
+            result : ''
         }
         this.handleName = this.handleName.bind(this);
         this.handlePswd = this.handlePswd.bind(this);
@@ -27,11 +27,10 @@ class LogIn extends React.Component{
 
     handleSubmit(event){
         axios
-        .post("http://157.245.9.203/API/LogIn.php",JSON.stringify(this.state))
-        .then(res=>this.setState({data: res.data}))
+        .post("http://157.245.9.203/API/LoginWebClient.php",JSON.stringify(this.state))
+        .then(res=>this.setState({result: res.data}))
         .catch(err => console.log(err));
         this.props.fetchUser(this.state.name);
-        console.log(this.state.data);
         event.preventDefault();
     }
 

@@ -1,8 +1,5 @@
 #BDLogo{
   width: 60%;
   padding-right: 30%;
-}
-.User{
-  display: inline-block;
-  width: 100%;
+  display: block;
 }
